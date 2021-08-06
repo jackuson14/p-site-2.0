@@ -35,7 +35,7 @@ export const projects = [
   {
     title: 'E-commerce mobile application',
     description: "Using React Native as well as many libraries, I have lead the front-end development of state management as well as the inner workings of the application during an internship.",
-    image: '/images/prod-7.png',
+    image: '/images/prod-9.png',
     tags: ['React Native', 'Firebase', 'Javascript'],
     source: '',
     visit: '',

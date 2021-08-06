@@ -11,15 +11,14 @@ export const SectionBody = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
     display: flex;
+    padding-top: 100px;
     flex-direction: column;
-
     margin: 0 auto;
   }
   @media ${(props) => props.theme.breakpoints.md} {
     width: 100%;
     display: flex;
     flex-direction: column;
-
     margin: 0 auto;
   }
 `;
