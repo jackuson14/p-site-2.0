@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SectionBody = styled.div`
   padding-top: 150px;
   padding-bottom: 100px;
-  font-family: 'Droid Serif';
+  font-family: 'PT Serif';
   font-style: italic;
   font-weight: bold;
   font-size: 7rem;
