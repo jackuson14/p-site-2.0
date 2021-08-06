@@ -54,6 +54,17 @@ export const projects = [
     visitName:'',
     id: 4,
   },
+  {
+    title: 'React JS E-Commerce *In progress*',
+    description: "A modern e-commerce store built with React JS and Commerce JS, that was initially designed in Figma.",
+    image: '/images/prod-8.png',
+    tags: ['Figma', 'React', 'Commerce JS'],
+    source: 'https://github.com/jackuson14/e-commerce',
+    visit: '',
+    sourceName: 'Github',
+    visitName:'',
+    id: 5,
+  },
 ];
 
 export const TimeLineData = [
