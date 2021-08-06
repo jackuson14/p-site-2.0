@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "personal-site-a3131"
+  },
+  "targets": {
+    "personal-site-a3131": {
+      "hosting": {
+        "prod": [
+          "jackson-lee"
+        ],
+        "staging": [
+          "personal-site-a3131"
+        ]
+      }
+    }
+  }
+}
