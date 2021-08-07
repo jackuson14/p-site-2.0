@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useEffect, useRef } from "react";
 import { Section2, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { SectionBody } from './HeroStyles';
@@ -8,6 +8,23 @@ import Link from 'next/link';
 
 const Hero = (props) => {
     const el = useRef(null);
+    const [width, setWidth] = useState(
+        typeof window !== "undefined" ? window.innerWidth : 0
+    );
+    const handleWindowSizeChange = () => {
+    setWidth(typeof window !== "undefined" ? window.innerWidth : 0);
+    };
+    useEffect(() => {
+    if (typeof window !== "undefined") {
+        window.addEventListener("resize", handleWindowSizeChange);
+    }
+    return () => {
+        if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleWindowSizeChange);
+        }
+    };
+    }, []);
+    let isMobile = width <= 768 ? true : false;
     useEffect(() => {
         const typed = new Typed(el.current, {
         strings: ["Junior Software Developer", "Computer Science Student", "Hobby photographer"], // Strings to display
@@ -33,11 +50,13 @@ const Hero = (props) => {
             <span style={{ fontFamily: 'Roboto Slab', fontStyle:'italic', fontSize:'4.5rem'}} ref={el}></span>
             </SectionBody>
             <br />
+
+            {isMobile ? null : 
             <Link href="#projects">
             <a style={{background: 'transparent', color: 'inherit', border: '0px', padding: 0, cursor: 'pointer', outline: 'inherit'}} >
                 <ArrowWithAnimation />
             </a>
-            </Link>
+            </Link>}
         </div>
         <Carousel autoPlay infiniteLoop showArrows={false} showStatus={false} showIndicators={false} showThumbs={false}>
         <div>

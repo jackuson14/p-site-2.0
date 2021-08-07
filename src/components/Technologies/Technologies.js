@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { DiFirebase, DiReact, DiZend } from "react-icons/di";
 import {
   Section,
@@ -15,31 +15,37 @@ import {
   TechExp,
   TechPer,
   ProgressCont,
-  Per
+  Per,
 } from "./TechnologiesStyles";
 import { technologies } from "../../constants/constants";
 
-const Technologies = () => (
-  <Section id="tech">
-    <SectionTitle main>Technologies</SectionTitle>
-    <TechnologyComponents>
-      {technologies.map((p, i) => (
-        <TechItem key={i}>
-          <ImageContainer>
-            <img align="left" alt="React" width="100%" src={p.image} />
-          </ImageContainer>
-          <TechName>{p.name}</TechName>
-          <TechExp><span>{p.experience}</span></TechExp>
-          <TechPer percent={p.percentage}>{p.percentage}<Per style={{color: '#fff'}}>%</Per></TechPer>
-          <Progress done={p.percentage} />
-        </TechItem>
-      ))}
-    </TechnologyComponents>
-  </Section>
-);
-
+const Technologies = ({}) => {
+  return (
+    <Section id="tech">
+      <SectionTitle main>Technologies</SectionTitle>
+      <TechnologyComponents>
+        {technologies.map((p, i) => (
+          <TechItem key={i}>
+            <ImageContainer>
+              <img align="left" alt="React" width="100%" src={p.image} />
+            </ImageContainer>
+            <TechName>{p.name}</TechName>
+            <TechExp>
+              <span>{p.experience}</span>
+            </TechExp>
+            <TechPer percent={p.percentage}>
+              {p.percentage}
+              <Per style={{ color: "#fff" }}>%</Per>
+            </TechPer>
+            <Progress done={p.percentage} />
+          </TechItem>
+        ))}
+      </TechnologyComponents>
+    </Section>
+  );
+};
 const Progress = ({ done }) => {
-  const [style, setStyle] = React.useState({});
+  const [style, setStyle] = useState({});
 
   setTimeout(() => {
     const newStyle = {

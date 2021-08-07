@@ -45,7 +45,7 @@ export const projects = [
   },
   {
     title: 'Durian Garden DBMS',
-    description: "Using Django as the frontend framework and MySQL for database, this database management system was created to replace a client's primitive and disorganised workflow system.",
+    description: "Using Django as the framework of our webapp and mySQL for the backend of the webapp - This management system is proposed by my client (Durian Garden Sdn. Bhd.) aimed to improve the company's workflow efficiency and reduce the cost for managing their inventory.",
     image: '/images/prod-6.png',
     tags: ['Python', 'Django', 'MySQL'],
     source: 'https://github.com/jackuson14/DGSB-Stock-Management-Project',
