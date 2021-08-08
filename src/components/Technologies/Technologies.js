@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { DiFirebase, DiReact, DiZend } from "react-icons/di";
 import {
   Section,
@@ -20,6 +20,8 @@ import {
 import { technologies } from "../../constants/constants";
 
 const Technologies = ({}) => {
+  
+
   return (
     <Section id="tech">
       <SectionTitle main>Technologies</SectionTitle>
@@ -45,21 +47,40 @@ const Technologies = ({}) => {
   );
 };
 const Progress = ({ done }) => {
+  
   const [style, setStyle] = useState({});
 
-  setTimeout(() => {
-    const newStyle = {
-      opacity: 1,
-      width: `${done}%`,
-    };
+  const ourRef = useRef(null)
 
-    setStyle(newStyle);
-  }, 200);
+  useLayoutEffect(() => {
+    const topPos = element => element.getBoundingClientRect().top;
+   //added to reduce redundancy
+    const div1Pos = topPos(ourRef.current)
+
+    const onScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight;
+      if (div1Pos < scrollPos) {
+        setTimeout(() => {
+          const newStyle = {
+            opacity: 1,
+            width: `${done}%`,
+          };
+      
+          setStyle(newStyle);
+        }, 200);
+      }
+    }
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [])
+
+  
 
   return (
     <>
-      <ProgressCont>
-        <ProgressBar style={style} />
+      <ProgressCont >
+        <ProgressBar ref={ourRef} style={style} />
       </ProgressCont>
     </>
   );
