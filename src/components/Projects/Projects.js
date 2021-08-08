@@ -26,16 +26,13 @@ const Projects = () => {
   );
   const [clicked, setClicked] = useState(false);
   const handleWindowSizeChange = () => {
-    setWidth(typeof window !== "undefined" ? window.innerWidth : 0);
+    setWidth( window.innerWidth );
   };
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleWindowSizeChange);
-    }
+    window.addEventListener("resize", handleWindowSizeChange);
+
     return () => {
-      if (typeof window !== "undefined") {
         window.removeEventListener("resize", handleWindowSizeChange);
-      }
     };
   }, []);
   let isMobile = width <= 768 ? true : false;
