@@ -1,9 +1,6 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
-import { DiFirebase, DiReact, DiZend } from "react-icons/di";
 import {
   Section,
-  SectionDivider,
-  SectionText,
   SectionTitle,
 } from "../../styles/GlobalComponents";
 import {
@@ -47,7 +44,7 @@ const Technologies = ({}) => {
   );
 };
 const Progress = ({ done }) => {
-  
+
   const [style, setStyle] = useState({});
 
   const ourRef = useRef(null)

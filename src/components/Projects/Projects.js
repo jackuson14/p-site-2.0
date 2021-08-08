@@ -13,8 +13,7 @@ import {
   Img,
 } from "./ProjectsStyles";
 import {
-  Section,
-  SectionDivider,
+  Section, 
   SectionTitle,
 } from "../../styles/GlobalComponents";
 import { projects } from "../../constants/constants";
@@ -22,7 +21,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const Projects = () => {
   const [width, setWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
+    typeof window !== "undefined" ? window.innerWidth : 1200
   );
   const [clicked, setClicked] = useState(false);
   const handleWindowSizeChange = () => {
@@ -40,7 +39,7 @@ const Projects = () => {
   return (
     <Section nopadding id="projects">
       <SectionTitle main>Projects</SectionTitle>
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 800: 2, 1000: 3 }}>
         <Masonry>
           {projects.map((p, i) => {
             return isMobile ? (

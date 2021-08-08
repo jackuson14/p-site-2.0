@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useEffect, useRef } from "react";
-import { Section2, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { Section2 } from '../../styles/GlobalComponents';
 import { SectionBody } from './HeroStyles';
 import Typed from 'typed.js';
 import { Carousel } from 'react-responsive-carousel';
@@ -9,7 +9,7 @@ import Link from 'next/link';
 const Hero = (props) => {
     const el = useRef(null);
     const [width, setWidth] = useState(
-        typeof window !== "undefined" ? window.innerWidth : 0
+        typeof window !== "undefined" ? window.innerWidth : 1000
     );
     const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
