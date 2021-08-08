@@ -64,7 +64,7 @@ const Progress = ({ done }) => {
           };
       
           setStyle(newStyle);
-        }, 200);
+        }, 100);
       }
     }
 

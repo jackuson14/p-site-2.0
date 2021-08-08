@@ -39,7 +39,7 @@ const Projects = () => {
   return (
     <Section nopadding id="projects">
       <SectionTitle main>Projects</SectionTitle>
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 800: 2, 1000: 3 }}>
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 800: 2, 1300: 3 }}>
         <Masonry>
           {projects.map((p, i) => {
             return isMobile ? (
